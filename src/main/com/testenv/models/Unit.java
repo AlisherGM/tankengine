@@ -1,6 +1,5 @@
-package com.aci.student24.scene.pojo;
+package com.testenv.models;
 
-import com.aci.student24.scene.pojo.dao.Drawable;
 import javafx.scene.paint.Paint;
 
 public abstract class Unit implements Drawable {

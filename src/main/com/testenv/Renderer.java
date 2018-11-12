@@ -1,7 +1,8 @@
-package com.aci.student24.scene;
+package com.testenv;
 
-import com.aci.student24.scene.param.Size;
-import com.aci.student24.scene.pojo.dao.Drawable;
+
+import com.testenv.models.Drawable;
+import com.testenv.models.Size;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;

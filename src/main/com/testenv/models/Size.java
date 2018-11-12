@@ -1,4 +1,4 @@
-package com.aci.student24.scene.param;
+package com.testenv.models;
 
 public class Size {
     private int width;

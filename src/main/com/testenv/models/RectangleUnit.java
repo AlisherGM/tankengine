@@ -1,6 +1,5 @@
-package com.aci.student24.scene.pojo;
+package com.testenv.models;
 
-import com.aci.student24.scene.param.Size;
 import javafx.scene.Group;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;

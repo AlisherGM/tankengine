@@ -1,7 +1,8 @@
-package com.aci.student24;
+package com.testenv;
 
-import com.aci.student24.scene.Renderer;
-import com.aci.student24.scene.pojo.Map;
+import com.testenv.models.Block;
+import com.testenv.models.Map;
+import com.testenv.models.Size;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -13,21 +14,22 @@ public class Main extends Application {
     private Map map;
     @Override
     public void start(Stage stage) throws Exception {
-        Group root = new Group();
+        var size = new Size(1000, 1000);
+        var root = new Group();
+        renderer = new Renderer(size, stage);
         stage.setScene(new Scene(root, 1200, 900, Color.DARKGRAY));
         stage.show();
-
-        while(! gameEnded() ) {
-            tick(root);
-        }
+        map = new Map(size);
+        initMap(map);
+        tick(root);
     }
 
-    private boolean gameEnded() {
-        return false;
+    private void initMap(Map map) {
+        map.addBlocks(new Block(100, 50, 100, 60));
     }
 
     private void tick(Group group) {
-        renderer.clear();
+        //renderer.clear();
 
         // game logic here
 

@@ -1,4 +1,4 @@
-package com.aci.student24.scene.pojo;
+package com.testenv.models;
 
 import javafx.scene.Group;
 import javafx.scene.paint.Paint;
