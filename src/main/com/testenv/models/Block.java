@@ -6,7 +6,7 @@ import javafx.scene.paint.Paint;
 public class Block extends RectangleUnit {
     private final static Paint color = Color.RED;
 
-    public Block(int x, int y, int width, int height) {
-        super(x, y, width, height, color);
+    public Block(int x, int y, int width, int height, double angle) {
+        super(x, y, width, height, angle, color);
     }
 }

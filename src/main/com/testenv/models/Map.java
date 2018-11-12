@@ -31,4 +31,16 @@ public class Map implements Drawable {
     public void addTank(Tank tank) {
         tanks.add(tank);
     }
+
+    public List<Block> getBlocks() {
+        return blocks;
+    }
+
+    public List<Tank> getTanks() {
+        return tanks;
+    }
+
+    public void apply(UserAction action) {
+        // TODO: implement
+    }
 }

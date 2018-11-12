@@ -1,37 +1,52 @@
 package com.testenv;
 
-import com.testenv.models.Block;
-import com.testenv.models.Map;
-import com.testenv.models.Size;
+import com.testenv.bl.Algorithm;
+import com.testenv.models.*;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Main extends Application {
     private Renderer renderer;
     private Map map;
+    private List<Algorithm> algorithms;
+    private HashMap<Integer, Player> players;
+
     @Override
     public void start(Stage stage) throws Exception {
         var size = new Size(1000, 1000);
-        var root = new Group();
         renderer = new Renderer(size, stage);
-        stage.setScene(new Scene(root, 1200, 900, Color.DARKGRAY));
-        stage.show();
         map = new Map(size);
-        initMap(map);
-        tick(root);
+        algorithms = new ArrayList<>();
+        players = new HashMap<>();
+        initScene(map);
+
+        tick();
     }
 
-    private void initMap(Map map) {
-        map.addBlocks(new Block(100, 50, 100, 60));
+    private void initScene(Map map) {
+        map.addBlocks(new Block(100, 50, 100, 60, 0));
+        var tank = new Tank(300, 300, 100, 100, 45, Color.BLUE, 1);
+        map.addTank(tank);
+        var tanks = new ArrayList<Tank>();
+        tanks.add(tank);
+        players.put(1, new Player(tanks));
+        algorithms.add(new Strategy());
     }
 
-    private void tick(Group group) {
-        //renderer.clear();
+    private void tick() {
+        renderer.clear();
 
-        // game logic here
+        var actions = algorithms.stream().map(a -> a.move(players.get(a.getId()), map)).collect(Collectors.toList());
+
+        actions.forEach(as->as.forEach(a->map.apply(a)));
 
         renderer.draw(map);
     }
