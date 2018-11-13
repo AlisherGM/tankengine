@@ -49,8 +49,8 @@ public class Map implements Drawable {
         if(action.move()) {
             Tank tank = tanks.stream().filter(t -> t.getId() == action.tankId()).findFirst().get();
             tank.setAngle(tank.getAngle() + action.angle());
-            tank.x = (tank.x + settings.getTickSpeed()) * Math.cos(tank.getAngle());
-            tank.y = (tank.x + settings.getTickSpeed()) * Math.sin(tank.getAngle());
+            tank.x = tank.x + (settings.getTickSpeed() * Math.cos(tank.getAngle()));
+            tank.y = tank.x + (settings.getTickSpeed() * Math.sin(tank.getAngle()));
         }
     }
 }

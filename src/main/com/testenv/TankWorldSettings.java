@@ -8,7 +8,7 @@ public class TankWorldSettings implements Settings {
 
     @Override
     public double getTickSpeed() {
-        return 25;
+        return 5;
     }
 
     @Override

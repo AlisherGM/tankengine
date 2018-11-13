@@ -5,6 +5,7 @@ import com.testenv.bl.SessionFabric;
 import com.testenv.bl.Settings;
 import com.testenv.models.*;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -17,30 +18,34 @@ public class Main extends Application {
     private Map map;
     private List<Algorithm> algorithms;
     private HashMap<Integer, Player> players;
+    Thread mainThread;
 
     @Override
     public void start(Stage stage) throws Exception {
         Settings settings = new TankWorldSettings();
         SessionFabric session = new SessionFabric(settings);
-        map = session.buildMap();
         renderer = session.buildRender(stage);
-
         algorithms = new ArrayList<>();
         players = new HashMap<>();
         initScene(session);
-        tick();
-        /*while (true) {
-            Thread.sleep(1000);
-            tick(session);
-        }*/
-
-    }
+        mainThread = new Thread(() -> {
+            while (true) {
+                Platform.runLater(this::tick);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    break;
+                }
+            }
+        });
+        mainThread.start();
+}
 
     private void initScene(SessionFabric session) {
-
         Tank tank = session.buildTank(1, 100, 100, 90);
         Block block1 = session.buildBlock(400, 500, 0);
         Block block2 = session.buildBlock(780, 600, 0);
+        map = session.buildMap();
         map.addTanks(tank);
         map.addBlocks(block1, block2);
 
