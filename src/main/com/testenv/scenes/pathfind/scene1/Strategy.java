@@ -1,4 +1,4 @@
-package com.testenv.scenes.pathfind;
+package com.testenv.scenes.pathfind.scene1;
 
 import com.testenv.bl.ClickableAlgorithm;
 import com.testenv.models.Map;

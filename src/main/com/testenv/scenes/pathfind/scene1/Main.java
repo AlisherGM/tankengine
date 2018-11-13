@@ -1,12 +1,10 @@
-package com.testenv;
+package com.testenv.scenes.pathfind.scene1;
 
 import com.testenv.bl.Algorithm;
 import com.testenv.bl.Renderer;
 import com.testenv.bl.SessionFabric;
 import com.testenv.bl.Settings;
 import com.testenv.models.*;
-import com.testenv.scenes.pathfind.Strategy;
-import com.testenv.scenes.pathfind.TankWorldSettings;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -24,7 +22,7 @@ public class Main extends Application {
     Thread mainThread;
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         Settings settings = new TankWorldSettings();
         SessionFabric session = new SessionFabric(settings);
         renderer = session.buildRender(stage);

@@ -1,24 +1,23 @@
-package com.testenv.scenes.pathfind;
+package com.testenv.scenes.pathfind.scene2;
 
 import com.testenv.bl.Settings;
 import com.testenv.models.Size;
-import javafx.scene.Scene;
 
 public class TankWorldSettings implements Settings {
 
     @Override
     public double getTickSpeed() {
-        return 5;
+        return 50;
     }
 
     @Override
     public double getTickAngle() {
-        return 20;
+        return 360;
     }
 
     @Override
     public Size getMapSize() {
-        return new Size(1400, 800);
+        return new Size(800, 800);
     }
 
     @Override
@@ -28,6 +27,6 @@ public class TankWorldSettings implements Settings {
 
     @Override
     public Size getBlockSize() {
-        return new Size(30, 30);
+        return new Size(50, 50);
     }
 }
