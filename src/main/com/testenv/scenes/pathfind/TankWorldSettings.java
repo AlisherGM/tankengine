@@ -1,4 +1,4 @@
-package com.testenv;
+package com.testenv.scenes.pathfind;
 
 import com.testenv.bl.Settings;
 import com.testenv.models.Size;

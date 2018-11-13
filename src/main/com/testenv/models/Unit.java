@@ -8,9 +8,16 @@ public abstract class Unit implements Drawable {
     public Paint color;
 
     public Unit(double x, double y, Paint color){
-        System.out.println("->" + x + " " + y);
         this.x = x;
         this.y = y;
         this.color = color;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
     }
 }

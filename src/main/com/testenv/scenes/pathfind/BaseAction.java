@@ -1,4 +1,4 @@
-package com.testenv;
+package com.testenv.scenes.pathfind;
 
 import com.testenv.models.UserAction;
 

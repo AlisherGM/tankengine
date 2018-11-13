@@ -17,7 +17,6 @@ public abstract class RectangleUnit extends Unit {
     @Override
     public void draw(Group root) {
         Rectangle rc = new Rectangle();
-        System.out.println(super.x + " " + super.y);
         rc.setX(x);
         rc.setY(y);
         rc.setFill(color);
@@ -34,10 +33,12 @@ public abstract class RectangleUnit extends Unit {
     public void setSize(Size size) {
         this.size = size;
     }
+
     public double getAngle(){
         return angle;
     }
     public void setAngle(double angle){
         this.angle = angle;
     }
+
 }

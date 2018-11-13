@@ -1,7 +1,6 @@
 package com.testenv.bl;
 
 
-import com.testenv.Renderer;
 import com.testenv.models.Block;
 import com.testenv.models.Map;
 import com.testenv.models.Tank;

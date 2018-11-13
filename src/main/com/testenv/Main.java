@@ -1,9 +1,12 @@
 package com.testenv;
 
 import com.testenv.bl.Algorithm;
+import com.testenv.bl.Renderer;
 import com.testenv.bl.SessionFabric;
 import com.testenv.bl.Settings;
 import com.testenv.models.*;
+import com.testenv.scenes.pathfind.Strategy;
+import com.testenv.scenes.pathfind.TankWorldSettings;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -42,7 +45,7 @@ public class Main extends Application {
 }
 
     private void initScene(SessionFabric session) {
-        Tank tank = session.buildTank(1, 100, 100, 90);
+        Tank tank = session.buildTank(1, 100, 100, 0);
         Block block1 = session.buildBlock(400, 500, 0);
         Block block2 = session.buildBlock(780, 600, 0);
         map = session.buildMap();
@@ -53,6 +56,9 @@ public class Main extends Application {
 
         tanks.add(tank);
         players.put(1, new Player(tanks));
+
+        Strategy strategy = new Strategy();
+        renderer.getScene().setOnMouseClicked (event -> strategy.onClick(event.getX(), event.getY()));
 
         algorithms.add(new Strategy());
     }
