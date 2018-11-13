@@ -7,7 +7,7 @@ import javafx.scene.shape.Circle;
 public class CircleUnit extends Unit {
     private int radius;
 
-    public CircleUnit(int x, int y, int radius, Paint color) {
+    public CircleUnit(double x, double y, int radius, Paint color) {
         super(x-radius/2, y-radius/2, color);
         this.radius = radius;
     }
