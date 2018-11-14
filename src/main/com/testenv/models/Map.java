@@ -32,7 +32,6 @@ public class Map implements Drawable{
 
     public void apply(UserAction action) {
 //        if (!Collision.validate(this, action)) return;
-
         Tank tank = tanks.stream().filter(t -> t.getId() == action.tankId()).findFirst().get();
         if (action.move()) {
             if(Math.abs(action.angle()) < 0.0000000001) {

@@ -9,7 +9,7 @@ public abstract class RectangleUnit extends Unit {
     private double angle;
 
     public RectangleUnit(double x, double y, Size size, double angle, Paint color) {
-        super(x-size.getWidth()/2, y-size.getHeight()/2, color);
+        super(x, y, color);
         this.size = size;
         this.angle = angle;
     }
@@ -17,8 +17,8 @@ public abstract class RectangleUnit extends Unit {
     @Override
     public void draw(Group root) {
         Rectangle rc = new Rectangle();
-        rc.setX(x);
-        rc.setY(y);
+        rc.setX(x-size.getWidth()/2);
+        rc.setY(y-size.getHeight()/2);
         rc.setFill(color);
         rc.setWidth(size.getWidth());
         rc.setHeight(size.getHeight());

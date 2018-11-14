@@ -5,9 +5,9 @@ import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 
 public class CircleUnit extends Unit {
-    private int radius;
+    private double radius;
 
-    public CircleUnit(double x, double y, int radius, Paint color) {
+    public CircleUnit(double x, double y, double radius, Paint color) {
         super(x-radius/2, y-radius/2, color);
         this.radius = radius;
     }
@@ -18,11 +18,11 @@ public class CircleUnit extends Unit {
         root.getChildren().addAll(circle);
     }
 
-    public int getRadius() {
+    public double getRadius() {
         return radius;
     }
 
-    public void setRadius(int radius) {
+    public void setRadius(double radius) {
         this.radius = radius;
     }
 

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Strategy implements ClickableAlgorithm {
-    static double x=150, y=150;
+    static double x=200, y=200;
 
     @Override
     public List<UserAction> move(Player player, Map map) {
@@ -34,7 +34,6 @@ public class Strategy implements ClickableAlgorithm {
     }
 
     public void onClick(double x, double y) {
-        System.out.println(x + " " + y);
         Strategy.x = x;
         Strategy.y = y;
     }
