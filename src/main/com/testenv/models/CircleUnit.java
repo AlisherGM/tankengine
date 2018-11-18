@@ -14,7 +14,7 @@ public class CircleUnit extends Unit {
 
     @Override
     public void draw(Group root) {
-        Circle circle = new Circle(x, y, radius, color);
+        Circle circle = new Circle(getX(), getY(), radius, color);
         root.getChildren().addAll(circle);
     }
 

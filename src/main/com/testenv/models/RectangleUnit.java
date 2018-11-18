@@ -17,8 +17,8 @@ public abstract class RectangleUnit extends Unit {
     @Override
     public void draw(Group root) {
         Rectangle rc = new Rectangle();
-        rc.setX(x-size.getWidth()/2);
-        rc.setY(y-size.getHeight()/2);
+        rc.setX(getX()-size.getWidth()/2);
+        rc.setY(getY()-size.getHeight()/2);
         rc.setFill(color);
         rc.setWidth(size.getWidth());
         rc.setHeight(size.getHeight());
