@@ -1,10 +1,11 @@
-package com.testenv.scenes.pathfind.scene2;
+package com.testenv.scenes.pathfind.scene3;
 
 import com.testenv.bl.Algorithm;
 import com.testenv.bl.Renderer;
 import com.testenv.bl.SessionFabric;
 import com.testenv.bl.Settings;
 import com.testenv.models.*;
+import com.testenv.scenes.pathfind.scene3.strategy.Strategy;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -77,11 +78,11 @@ public class Main extends Application {
 
         Tank tank = session.buildTank(1, 75, 75, 0);
 
-        Tank tank2 = session.buildTank(1, 150, 75, 0);
+        Tank tank2 = session.buildTank(2, 175, 75, 0);
 
-        Tank tank3 = session.buildTank(1, 75, 150, 0);
+        Tank tank3 = session.buildTank(3, 75, 175, 0);
 
-        Tank tank4 = session.buildTank(1, 150, 75, 0);
+        Tank tank4 = session.buildTank(4, 175, 75, 0)
 
         List<Tank> tanks = new ArrayList<>();
         tanks.add(tank);

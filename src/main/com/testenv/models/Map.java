@@ -2,6 +2,7 @@ package com.testenv.models;
 
 import com.testenv.bl.Collision;
 import com.testenv.bl.Settings;
+import com.testenv.scenes.pathfind.scene3.BaseAction;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -31,17 +32,18 @@ public class Map implements Drawable{
     }
 
     public void apply(UserAction action) {
-//        if (!Collision.validate(this, action)) return;
-        Tank tank = tanks.stream().filter(t -> t.getId() == action.tankId()).findFirst().get();
-        if (action.move()) {
-            if(Math.abs(action.angle()) < 0.0000000001) {
-                tank.setX(tank.getX() + (settings.getTickSpeed() * Math.cos(Math.toRadians(tank.getAngle()))));
-                tank.setY(tank.getY() + (settings.getTickSpeed() * Math.sin(Math.toRadians(tank.getAngle()))));
-            } else {
-                tank.setAngle(tank.getAngle() + Math.signum(action.angle()) *
-                        Math.min(Math.abs(action.angle()), settings.getTickAngle()));
+        tanks.stream().filter(t -> t.getId() == action.tankId()).forEach(tank -> {
+            if(tank.getId() != action.tankId()) return;
+            if (action.move()) {
+                if(Math.abs(action.angle()) < 0.0000000001) {
+                    tank.setX(tank.getX() + (settings.getTickSpeed() * Math.cos(Math.toRadians(tank.getAngle()))));
+                    tank.setY(tank.getY() + (settings.getTickSpeed() * Math.sin(Math.toRadians(tank.getAngle()))));
+                } else {
+                    tank.setAngle(tank.getAngle() + Math.signum(action.angle()) *
+                            Math.min(Math.abs(action.angle()), settings.getTickAngle()));
+                }
             }
-        }
+        });
     }
 
     public Size getSize() {
