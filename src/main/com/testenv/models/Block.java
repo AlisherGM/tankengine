@@ -1,6 +1,5 @@
 package com.testenv.models;
 
-import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 public class Block extends RectangleUnit {

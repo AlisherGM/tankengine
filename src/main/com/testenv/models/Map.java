@@ -1,8 +1,6 @@
 package com.testenv.models;
 
-import com.testenv.bl.Collision;
 import com.testenv.bl.Settings;
-import com.testenv.scenes.pathfind.scene3.BaseAction;
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -10,7 +8,6 @@ import javafx.scene.paint.Paint;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 public class Map implements Drawable{
 

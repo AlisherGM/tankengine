@@ -1,12 +1,6 @@
 package com.testenv.models;
 
-/**
- * 18.11.18
- *
- * @author Dinar Rafikov
- * @version 1.0
- */
-public class Coordinate {
+public class Coordinate{
 	private double x;
 	private double y;
 
